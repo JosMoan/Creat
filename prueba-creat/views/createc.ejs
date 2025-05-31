@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/createc.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <title>Createc</title>
+</head>
+
+<body>
+    <!-- Barra lateral -->
+    <div class="sidebar">
+        <div class="logo">
+            <h1>CreaTec</h1> <!--Titulo dentro de la barra lateral-->
+        </div>
+        <a href="#" class="nav-link" data-section="inicio"><i class='bx bxs-home-alt-2'></i>Inicio</a>
+        <a href="#" class="nav-link" data-section="datoPersonal"><i class='bx bxs-user'></i></i>Datos Personales</a>
+        <a href="#" class="nav-link" data-section="progreso"><i class='bx bx-stats'></i>Mi progreso</a>
+        <a href="#" class="nav-link" data-section="rutas"><i class='bx bx-layer'></i>Mis rutas</a>
+        <a href="#" class="nav-link" data-section="notificaciones"><i class='bx bxs-bell-ring'></i>Notificaciones</a>
+        <a href="/logout" class="nav-link"><i class='bx bx-log-out'></i>Cerrar Sesión</a>
+    </div>
+
+    <!-- Contenido principal -->
+    <div class="main-content">
+        <!-- Buscador en la parte superior con el texto de bienvenida -->
+        <div class="top-bar">
+            <div class="search-container">
+                <input type="text" placeholder="¿Qué quieres aprender?" />
+                <button><i class='bx bx-search'></i></button>
+            </div>
+            <h2 class="Bienvenida">Bienvenido <%= usuario %> <i class='bx bxs-user'></i></h2>
+        </div>
+
+        <!-- Sección Inicio -->
+        <div class="section-content active" id="inicio">
+            <!--Contenedor de escuelas-->
+            <div class="categories">
+            <h2>Descuebre las escuelas</h2>
+            <div class="category-list">
+                <span class="category active">
+                    <img src="/img/crea.jpeg" alt="Python">Python
+                </span>
+                    <span class="category active">
+                    <img src="/img/desarrollo-web.png"> Web
+                </span>
+                    <span class="category active">
+                        <img src="/img/html-css.jpg">JavaScript
+                    </span>
+                    <span class="category active">
+                        <img src="/img/gamer.jpg">Robotica
+                    </span>
+                    <span class="category active">
+                        <img src="/img/contenedor-registro.jpg">Nodejs</span>
+                    <!-- Añadir más categorías según lo necesario -->
+            </div>
+            </div>
+            <!-- Contenedor de videos -->
+            <div class="videos-container">
+                <h2>Cursos recomendados para ti</h2>
+                <div class="course-list">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/LD_Wr93PiMA?si=iYoo2z3TeNWOuntm"
+                    title="Curso Python" frameborder="0" allowfullscreen></iframe>
+
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/ELSm-G201Ls?si=zgFzlCEE7Ar92eNB"
+                    title="Curso HTML" frameborder="0" allowfullscreen></iframe>
+
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/N64bOLHlRJE?si=XM4cHFYmeaStVGFp"
+                    title="Curso Robótica" frameborder="0" allowfullscreen></iframe>
+            </div>
+            </div>
+            <!--Contenedor de cursos-->
+        <div class="cursos-container">
+            <h2>Nuestros mejores cursos</h2>
+            <!-- Flecha Izquierda -->
+            <div class="arrow arrow-left" onclick="scrollLeft()">&#10094;</div>
+            <div class="curso-list">
+                <!--Curso de Python-->
+                <div class="curso">
+                    <figure>
+                        <img src="img/Python.jpg" alt="Curso de Python">
+                    </figure>
+                    <h3>Curso de Python Básico</h3>
+                    <p>Desarrolla aplicaciones web, analiza datos y más.</p>
+                    <a href="/curso" class="btn-curso">Ver curso</a>
+                    <a href="" class="btn-agregar">Agregar</a>
+                </div>
+                <!--Curso de Desarrollo web-->
+                <div class="curso">
+                    <figure>
+                        <img src="img/desarrollo-web.png" alt="Curso de Desarrollo Web">
+                    </figure>
+                    <h3>Curso de Desarrollo Web</h3>
+                    <p>Crea tu propia página web con HTML, JavaScript, CSS y más</p>
+                    <a href="/curso-web" class="btn-curso">Ver curso</a>
+                    <a href="" class="btn-agregar">Agregar</a>
+                </div>
+                <!--Curso de Desarrollo programación basica-->
+                <div class="curso">
+                    <figure>
+                        <img src="img/p-basica.jpg" alt="Curso de Programación basica">
+                    </figure>
+                    <h3>Curso de Programación basica</h3>
+                    <p>Aprende a programar desde cero online.</p>
+                    <a href="/curso-programacion" class="btn-curso">Ver curso</a>
+                    <a href="" class="btn-agregar">Agregar</a>
+                </div>
+                <!--Curso de robotica-->
+                <div class="curso">
+                    <figure>
+                        <img src="img/robotica.jpg" alt="Curso de Robotica">
+                    </figure>
+                    <h3>Curso de Robotica</h3>
+                    <p>conceptos básicos para iniciarte en la robótica y electrónica.</p>
+                    <a href="/curso-robotica" class="btn-curso">Ver curso</a>
+                    <a href="" class="btn-agregar">Agregar</a>
+                </div>
+            </div>
+            <div class="arrow arrow-right" onclick="scrollRight()">&#10095;</div>
+        </div>        
+        </div>    
+        <!-- Sección Progreso -->
+        <div class="section-content" id="progreso">
+            <h2>Progreso del Usuario</h2>
+            <p>Este es el resumen del progreso de tus cursos:</p>
+            <ul class="progress-list">
+                <li>Curso de Python: <span class="progress-python">0%</span></li>
+                <li>Curso de HTML: <span class="progress-html">0%</span></li>
+                <li>Curso de Robótica: <span class="progress-robotica">0%</span></li>
+            </ul>
+        </div>
+        <!--Sección de datos personales-->
+        <div class="section-content" id="datoPersonal">
+            <h2>Datos Personales del Usuario</h2>
+            <div class="user-info">
+                <!--Información basica-->
+                <div class="info-basica">
+                    <h3>Información Básica</h3>
+                    <p><strong>Nombre Completo:</strong> <span class="editable" id="nombre-completo"><%= datosUsuario.nombre_completo %></span> <i class='bx bxs-edit edit-icon' data-target="nombre-completo"></i></p>
+                    <p><strong>Usuario:</strong> <span class="editable" id="usuario"><%= datosUsuario.usuario %></span> <i class='bx bxs-edit edit-icon' data-target="usuario"></i></p>
+                    <p><strong>Email:</strong> <span class="editable" id="email"><%= datosUsuario.email %></span> <i class='bx bxs-edit edit-icon' data-target="email"></i></p>
+                    <p><strong>Fecha de Nacimiento:</strong> <span class="editable" id="fecha-nacimiento"><%= datosUsuario.fecha_nacimiento %></span> <i class='bx bxs-edit edit-icon' data-target="fecha-nacimiento"></i></p>
+                </div>
+            </div>
+            <!--Inforación Adicional-->
+            <div class="user-info2">
+                <div class="info-adicional">
+                    <h3>Información adicional</h3>
+                    <p><strong>Sexo</strong> <span class="editable" id="sexo">....</span> <i class='bx bxs-edit edit-icon' data-target="sexo"></i></p>
+                    <p><strong>Ciudad</strong><span class="editable" id="ciudad">....</span> <i class='bx bxs-edit edit-icon' data-target="ciudad"></i></p>
+                    <p><strong>Nivel de educación</strong><span class="editable" id="sexo">....</span> <i class='bx bxs-edit edit-icon' data-target="sexo"></i></p>
+                </div>
+            </div>
+            <!--Información de contacto-->
+            <div class="user-info3">
+                <div class="info-contact">
+                    <h3>Información de contacto</h3>
+                    <p><strong>Numero de telefono</strong><span class="editable" id="telefono">....</span> <i class='bx bxs-edit edit-icon' data-target="telefono"></i></p>
+                    <p><strong>Dirección</strong><span class="editable" id="address">....</span> <i class='bx bxs-edit edit-icon' data-target="address"></i></p>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <script>
+        fetch("/check-session", {
+            method: "GET",
+            credentials: "same-origin"
+        })
+        .then(response => {
+            if (!response.ok) {
+                window.location.href = "/login"; // Redirige si la sesión no es válida
+            }
+        })
+        .catch(error => console.error("Error al verificar sesión:", error));
+    </script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>

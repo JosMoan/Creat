@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Por qué aprender Python?</title>
+    <link rel="stylesheet" href="css/video.css"> 
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Contenedor del Video -->
+        <div class="video-container">
+            <iframe 
+                width="560" 
+                height="315" 
+                src="https://www.youtube.com/embed/zRjbwI4K7xc?si=TZFmNQXNFYHWvmWf" 
+                title="YouTube video player" 
+                allow="autoplay; encrypted-media" 
+                allowfullscreen>
+            </iframe>
+        </div>
+
+        <!-- Sección de Comentarios -->
+        <div class="comments-section">
+            <h3>Comentarios</h3>
+            <!-- Comentario individual -->
+            <div class="comment">
+                <div class="icon-user">
+                <i class="bx bxs-user"></i>
+                </div>
+                    <div class="comment-content">
+                        <p><strong>José:</strong> ¡Excelente contenido! 😊</p>
+                    </div>
+            </div>
+            <div class="comment">
+                <div class="icon-user">
+                <i class="bx bxs-user"></i>
+                </div>
+                    <div class="comment-content">
+                        <p><strong>Camila:</strong> ¡Buen video! 😊</p>
+                    </div>
+            </div>
+        </div>
+
+        <!-- Input para agregar comentarios -->
+        <div class="add-comment">
+            <input type="text" id="commentInput" placeholder="Escribe un comentario...">
+            <button onclick="addComment()">Enviar</button>
+        </div>
+    </div>
+    <script src="js/video.js"></script> <!-- Archivo JS externo -->
+</body>
+</html>

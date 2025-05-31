@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso de Python</title>
+    <link rel="stylesheet" href="css/curso.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Barra lateral -->
+    <div class="sidebar">
+        <a href="#portada"><i class='bx bxs-chalkboard'></i>&nbsp;Portada</a>
+        <a href="#temario"><i class='bx bx-clipboard'></i>&nbsp;Temario</a>
+        <a href="#comunidad"><i class='bx bx-group'></i>&nbsp;Comunidad</a>
+        <a href="#precios"><i class='bx bx-money'></i>&nbsp;Precios</a>
+        <a href="#quien-ensena"><i class='bx bx-book-reader' ></i>&nbsp;Quién enseña</a>
+    </div>
+
+    <!-- Contenido principal -->
+    <div class="content">
+        <!-- Sección Portada -->
+        <section id="portada">
+            <div class="portada-contenido">
+                <h1>Curso de Python</h1>
+                <div class="rating">
+                    340 Opiniones | BÁSICO
+                </div>
+                <p>Python es el lenguaje de programación más popular del mundo. Con este curso aprende desde cero a automatizar tareas, desarrollar aplicaciones web, analizar datos y más.</p>
+                <div class="buttons">
+                    <a href="/pagos">
+                        <button class="comienza-ahora">COMIENZA AHORA</button>
+                    </a>
+                </div>
+            </div>
+            <div class="portada-imagen">
+                <img src="/img/py.png" alt="Instructor del Curso"> <!-- Asegúrate de que la imagen esté en esta ubicación -->
+                <p class="instructor-info"></p>
+            </div>
+        </section>
+
+        <!--TEMERARIO -->
+        <section id="temario">
+            <h2>Temario y recursos del Curso de Python</h2>
+            <div class="temario-container">
+                <div class="temario-seccion">
+                    <h3>Fundamentos de Programación y Python</h3>
+                    <div class="temario-item">
+                        <i class='bx bx-play-circle'></i>
+                        <a href="/video">
+                            ¿Por qué aprender Python?
+                        </a>
+                    </div>
+                    <div class="temario-item">
+                        <i class='bx bx-play-circle'></i>
+                        <a href="/video">
+                            Introducción a Python
+                        </a>
+                    </div>
+                    <div class="temario-item bloqueado">
+                        <i class='bx bx-lock-alt'></i>
+                        Conceptos Básicos de Programación
+                    </div>
+                    <div class="temario-item bloqueado">
+                        <i class='bx bx-lock-alt'></i>
+                        Práctica: Te doy la bienvenida a los ejercicios interactivos
+                    </div>
+                    <div class="temario-item bloqueado">
+                        <i class='bx bx-lock-alt'></i>
+                        Manipulación de Cadenas de Texto en Python
+                    </div>
+                    <div class="temario-item bloqueado">
+                        <i class='bx bx-lock-alt'></i>
+                        Enteros, Flotantes y Booleanos
+                    </div>
+                </div>
+            </div>
+        </section> 
+
+        <!--COMUNIDAD -->
+        <section id="comunidad">
+            <h2>Comunidad</h2>
+            <p>Conéctate con otros estudiantes y profesionales que también están aprendiendo Python.</p>
+        </section>
+        
+        <!--PRECIOS -->
+        <section id="precios">
+            <h2>Precios</h2>
+            <p>Explora nuestros planes de suscripción para obtener acceso completo al curso.</p>
+            <!--PLAN-->
+            <section class="pricing-section">
+                <h1>Unite y ejerce tu futuro profesional</h1>
+                <div class="pricing-container">
+                    <!-- Plan Basic -->
+                    <div class="plan-card plan-basic">
+                        <h3>Plan Basic</h3>
+                        <p>Para 1 estudiante</p>
+                        <div class="price">S/200 <span>/mes</span></div>
+                        <p class="billing">Cobro mensual recurrente</p>
+                        <ul>
+                            <li>✔ Contenido profesional y actualizado</li>
+                            <li>✖ Certificados digitales</li>
+                            <li>✖ Acceso a escuelas de Startups, Inglés y liderazgo</li>
+                            <li>✖ Eventos exclusivos como CreaTec Conf</li>
+                            <li>✖ Descarga de contenido en Createc</li>
+                            <li>✖ Certificados digitales para perfil profesional</li>
+                        </ul>
+                        <a href="/pagos">
+                        <button class="btn">Suscribete a Plan Basic</button>
+                        </a>
+                    </div>
+        
+                    <!-- Plan Expert -->
+                    <div class="plan-card plan-expert">
+                        <h3>Plan Expert</h3>
+                        <p>Para 1 estudiante</p>
+                        <div class="price">S/80 <span>/mes</span></div>
+                        <p class="billing">Cobro anual de S/890</p>
+                        <ul>
+                            <li>✔ Contenido profesional y actualizado</li>
+                            <li>✔ Certificados digitales</li>
+                            <li>✔ Acceso a escuelas de Startups, Inglés y liderazgo</li>
+                            <li>✔ Eventos exclusivos como CreaTec Conf</li>
+                            <li>✔ Descarga de contenido en Createc </li>
+                            <li>✔ Certificados digitales para perfil profesional</li>
+                        </ul>
+                        <a href="/pagos">
+                            <button class="btn">Suscribete a Plan Expert</button>
+                        </a>
+                        <p class="save">Ahorra 5 meses</p>
+                    </div>
+        
+                    <!-- Plan Expert Duo -->
+                    <div class="plan-card plan-expert-duo">
+                        <h3>Plan Expert Duo</h3>
+                        <p>Para 3 estudiantes</p>
+                        <div class="price">S/100 <span>/mes</span></div>
+                        <p class="billing">Cobro anual de S/1,190</p>
+                        <ul>
+                            <li>✔ Contenido profesional y actualizado</li>
+                            <li>✔ Certificados digitales</li>
+                            <li>✔ Acceso a escuelas de Startups, Inglés y liderazgo</li>
+                            <li>✔ Eventos exclusivos como CreaTec Conf</li>
+                            <li>✔ Descarga de contenido en Createc</li>
+                            <li>✔ Certificados digitales para perfil profesional</li>
+                        </ul>
+                        <a href="/pagos">
+                            <button class="btn">Suscribete a Plan Expert Duo</button>
+                        </a>
+                        <p class="save">Ahorra 7 meses</p>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <!--QUIEN ENSEÑA -->
+        <!--Sección de datos del profesor-->
+        <section id="quien-ensena">
+            <div class="instructor-container">
+                <div class="instructor-video">
+                    <img src="img/createc2.webp" alt="Foto del instructor">
+                </div>
+                <div class="instructor-info">
+                    <h2>Conoce quién enseña el Curso de Python</h2>
+                    <h3>Nombre de profesor</h3>
+                    <p class="instructor-title">Teacher In-house en CreaTec</p>
+                    <ul class="instructor-details">
+                        <li>🧠 Machine Learning and Data Science Lover.</li>
+                        <li>📲 Creadora de contenidos.</li>
+                        <li>👩‍🏫 Promotora de educación en programación e IA.</li>
+                        <li>👩‍💻 Teacher In House en CreaTec.</li>
+                    </ul>
+                    <button class="curso-btn">CURSOS DE -Nombre de profesor-</button>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script src="js/curso.js"></script>
+</body>
+</html>

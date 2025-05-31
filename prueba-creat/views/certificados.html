@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificado de Finalización</title>
+    <link rel="stylesheet" href="/public/css/certificados.css">
+</head>
+<body>
+    <div class="certificado">
+        <!-- Logo superior -->
+        <div class="logo">
+            <img src="/public/img/createc2.webp" alt="Logo" class="logo-img">
+        </div>
+        <!-- Encabezado -->
+        <h1 class="titulo">Certifica a</h1>
+        <h2 class="nombre">Calla Espinoza, Diego Ricardo</h2>
+        <p class="subtitulo">Por participar y aprobar el</p>
+        <h3 class="curso">CURSO DE DESARROLLO WEB</h3>
+        <!-- Información adicional -->
+        <div class="info-adicional">
+            <p><strong>Certificación de aprobación online:</strong></p>
+            <p>Aprobado el <strong id="fecha2"></strong></p>
+            <p>120 horas de teoría y práctica</p>
+            <!-- Enlace de descarga -->
+            <p><a href="/public/pdfs/certificado.pdf" download="certificado_finalizacion" target="_blank">Descargar Certificado</a></p>
+            <p>Código: <strong id="codigo"></strong></p>
+        </div>
+        <!-- Área de firmas -->
+        <div class="firmas">
+            <div class="firma">
+                <p>__________________________</p>
+                <p>CÓRDOVA LÓPEZ, JORGE LUIS</p>
+                <p>Instructor del Curso</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Obtener la fecha actual
+        const hoy = new Date();
+
+        // Formatear la fecha como "día de mes de año"
+        const opciones = { day: '2-digit', month: 'long', year: 'numeric' };
+        const fechaFormateada = hoy.toLocaleDateString('es-ES', opciones);
+
+        // Insertar la fecha en los elementos con ID "fecha2"
+        document.getElementById('fecha2').textContent = fechaFormateada;
+
+        // Función para generar un código aleatorio de 9 dígitos
+        function generarCodigo() {
+            let codigo = '';
+            for (let i = 0; i < 9; i++) {
+                codigo += Math.floor(Math.random() * 10); // Generar un número aleatorio del 0 al 9
+            }
+            return codigo;
+        }
+
+        // Insertar el código aleatorio en el elemento con ID "codigo"
+        document.getElementById('codigo').textContent = generarCodigo();
+    </script>
+</body>
+</html>

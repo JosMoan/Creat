@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/login.css">
+    <title>Login</title>
+
+</head>
+<body>
+    <div class="container">
+        <!-- Panel izquierdo con texto descriptivo -->
+        <div class="left-panel">
+            <header>
+                <h2 class="logo">
+                    <img src="img/CreaTec1.png" alt="Logo" title="Logo-Rubus" class="logo-img">
+                    CreaTec: Diseñando el Aprendizaje del Mañana
+                </h2>
+            </header>
+            <h1>Empieza ya con Createc</h1>
+            <!-- Párrafos con íconos de verificación y texto explicativo -->
+            <p><i class="fa fa-check-circle"></i>Estamos alegres de que formes parte de CreaTec.</p>
+            <p><i class="fa fa-check-circle"></i>Cursos importantes para tu conocimiento.</p>
+
+            <!-- Imagen de iniciar sesión debajo del texto -->
+        <img src="img/createc2.webp" alt="img-iniciar" class="animated-image">
+        </div>
+
+        <!-- Panel derecho con formulario de registro -->
+        <div class="right-panel">
+            <h2>Inicia Sesión</h2>
+
+            <!-- Formulario con campos de correo y contraseña -->
+            <form action="/valuser" method="POST">
+                <input type="usuario" name="usuario" placeholder="Usuario" required>
+                <input type="password" name="password" placeholder="Contraseña" required>
+                <button class="login-button" type="submit">Iniciar Sesión</button>
+            </form>
+
+            <!-- Enlace a iniciar sesión si ya tiene una cuenta -->
+            <a href="/registro" class="buttom">¿No tienes una cuenta? Registrate</a>
+            <!-- Texto pequeño con términos y condiciones -->
+        </div>
+    </div>
+    <script src="js/app.js"></script>
+</body>
+</html>
+

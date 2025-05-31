@@ -1,0 +1,443 @@
+/* Estilos generales para todos los elementos */
+* {
+    margin: 5; /* Margen de 5px para todos los elementos */
+    padding: 5; /* Relleno de 5px para todos los elementos */
+    box-sizing: border-box; /* Incluye padding y borde en el tamaño total */
+}
+
+body {
+    font-family: Arial, sans-serif; /* Fuente Arial o sans-serif */
+    color: #ffffff; /* Color del texto en blanco */
+    background-color: black; /* Fondo negro */
+    display: flex; /* Alinea los hijos en fila (barra lateral y contenido) */
+}
+
+/* Barra lateral */
+.sidebar {
+    width: 180px; /* Ancho fijo de la barra lateral */
+    background-color: black; /* Fondo negro de la barra lateral */
+    padding-top: 120px; /* Relleno en la parte superior */
+    position: fixed; /* Barra lateral fija al hacer scroll */
+    height: 100%; /* Altura completa de la pantalla */
+    box-shadow: 2px 0 5px rgba(2, 1, 12, 0.3); /* Sombra para mejor contraste */
+}
+
+.sidebar a {
+    display: flex; /* Organiza el contenido como flexbox */
+    align-items: center; /* Centra verticalmente los elementos */
+    color: #c9d1d9; /* Color del texto del enlace */
+    padding: 15px; /* Relleno de 15px */
+    text-decoration: none; /* Elimina el subrayado de los enlaces */
+    font-size: 1.1em; /* Aumenta el tamaño de la fuente */
+    transition: background-color 0.3s, color 0.3s; /* Transición para el color y fondo */
+    border-left: 3px solid transparent; /* Borde izquierdo transparente */
+}
+
+.sidebar a:hover {
+    background-color: #238636; /* Fondo verde al pasar el mouse */
+    color: #ffffff; /* Color del texto cambia a blanco */
+    border-left: 3px solid #ffffff; /* Borde izquierdo blanco al hacer hover */
+}
+
+/* CONTENIDO PRINCIPAL*/
+.content {
+    margin-left: 250px; /* Deja espacio para la barra lateral */
+    padding: 8px; /* Relleno de 8px */
+    width: calc(100% - 250px); /* Ancho restante después de la barra lateral */
+}
+
+section {
+    padding: 30px; /* Relleno de 30px */
+    margin-bottom: 40px; /* Margen inferior de 40px */
+    background-color: #161b22; /* Fondo oscuro */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para profundidad */
+}
+
+h1, h2 {
+    color: #58a6ff; /* Color azul para los títulos */
+}
+
+/* ESTILOS PARA LA PORTADA*/
+#portada {
+    display: flex; /* Flexbox para organizar el contenido */
+    align-items: center; /* Centra verticalmente */
+    justify-content: space-between; /* Espacio entre elementos */
+    padding: 10px; /* Relleno de 10px */
+    background-color: #000915; /* Fondo oscuro */
+    border-radius: 8px; /* Bordes redondeados */
+}
+
+.portada-contenido {
+    max-width: 60%; /* Ancho máximo del 60% */
+}
+
+.portada-contenido h1 {
+    font-size: 2.8em; /* Tamaño grande del título */
+    margin-bottom: 10px; /* Margen inferior de 10px */
+    color: #58a6ff; /* Azul vibrante */
+}
+
+.rating {
+    font-size: 1.2em; /* Tamaño de fuente grande */
+    color: #f1c40f; /* Color dorado para la calificación */
+    margin-bottom: 10px; /* Margen inferior */
+}
+
+.buttons {
+    display: flex; /* Flexbox para los botones */
+    gap: 15px; /* Espacio entre botones */
+    margin-top: 20px; /* Margen superior */
+}
+
+.ver-clase {
+    background-color: #333; /* Fondo gris oscuro */
+    color: #ffffff; /* Texto blanco */
+    padding: 12px 25px; /* Relleno del botón */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor a mano */
+    font-weight: bold; /* Texto en negrita */
+    transition: background-color 0.3s; /* Transición suave */
+}
+
+.comienza-ahora {
+    background-color: #238636; /* Fondo verde */
+    color: #ffffff; /* Texto blanco */
+    padding: 12px 25px; /* Relleno del botón */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor a mano */
+    font-weight: bold; /* Texto en negrita */
+    transition: background-color 0.3s; /* Transición suave */
+}
+
+button:hover {
+    opacity: 0.85; /* Opacidad al pasar el mouse */
+}
+
+.portada-imagen {
+    width: 100%; /* Ancho completo */
+    height: 100%; /* Altura completa */
+    display: flex; /* Flexbox para centrar */
+    align-items: center; /* Centra verticalmente */
+    justify-content: center; /* Centra horizontalmente */
+    position: relative; /* Para usar pseudo-elementos */
+    overflow: hidden; /* Oculta el contenido que desborda */
+    border-radius: 8px; /* Bordes redondeados */
+}
+
+.portada-imagen img {
+    width: 100%; /* Ancho completo de la imagen */
+    height: 100%; /* Altura completa de la imagen */
+    object-fit: cover; /* Ajusta la imagen sin distorsión */
+    border-radius: 8px; /* Bordes redondeados */
+}
+
+/* Degradado en el lado izquierdo */
+portada-imagen::before {
+    content: ''; /* Crea un pseudo-elemento */
+    position: absolute; /* Posición absoluta para cubrir la imagen */
+    top: 0; /* Desde la parte superior */
+    left: 0; /* Desde la izquierda */
+    width: 30%; /* Ancho del degradado en el lado izquierdo */
+    height: 100%; /* Altura completa */
+    background: linear-gradient(to right, rgba(0, 9, 21, 0.9), rgba(0, 9, 21, 0)); /* Degradado hacia la derecha */
+    pointer-events: none; /* No interactúa con el mouse */
+}
+
+/* Degradado en el lado derecho */
+.portada-imagen::after {
+    content: ''; /* Crea otro pseudo-elemento */
+    position: absolute; /* Posición absoluta para cubrir la imagen */
+    top: 0; /* Desde la parte superior */
+    right: 0; /* Desde la derecha */
+    width: 30%; /* Ancho del degradado en el lado derecho */
+    height: 100%; /* Altura completa */
+    background: linear-gradient(to left, rgba(0, 9, 21, 0.9), rgba(0, 9, 21, 0)); /* Degradado hacia la izquierda */
+    pointer-events: none; /* No interactúa con el mouse */
+}
+
+.instructor-info {
+    margin-top: 10px;
+    font-size: 0.95em;
+    color: #8b949e;
+}
+
+/*ESTILO PARA LA SECCIÓN DE TEMERARIO*/
+#temario {
+    padding: 30px;
+    background-color: #161b22;
+    color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 40px;
+}
+
+#temario h2 {
+    color: #58a6ff;
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+
+.temario-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.temario-seccion h3 {
+    font-size: 1.2em;
+    color: #c9d1d9;
+    margin-bottom: 15px;
+}
+
+.temario-item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    font-size: 1em;
+    background-color: #0d1117;
+    color: #c9d1d9;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.temario-item i {
+    color: #58a6ff;
+    margin-right: 10px;
+}
+
+.temario-item:hover {
+    background-color: #238636;
+    color: #ffffff;
+}
+
+.temario-item.bloqueado {
+    color: #6e7681;
+}
+
+.temario-item.bloqueado i {
+    color: #6e7681;
+}
+
+.comienza-ahora {
+    padding: 10px 20px;
+    background-color: #238636;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.comienza-ahora:hover {
+    background-color: #2ea043;
+}
+
+/*ESTILO PARA EL PRECIO - PLAN*/
+/* === Sección principal de precios === */
+a{
+    text-decoration: none;
+    color: inherit;
+}
+.pricing-section {
+    text-align: center; /* Centrar el contenido dentro de la sección */
+}
+
+h1 {
+    margin-bottom: 2rem; /* Espaciado inferior para el título */
+}
+
+/* === Contenedor para los planes === */
+.pricing-container {
+    display: flex; /* Usamos flexbox para alinear los elementos en fila */
+    gap: 20px; /* Espaciado entre los planes */
+    justify-content: center; /* Centrar horizontalmente */
+    flex-wrap: wrap; /* Permitir que los elementos se ajusten en varias líneas si es necesario */
+}
+
+/* === Estilos para el Plan Basic === */
+.plan-basic {
+    background-color: #1f2328; /* Fondo para el Plan Basic */
+    border: 2px solid #666; /* Borde gris */
+}
+
+.plan-basic .price {
+    color: #f1c40f; /* Color rojo para el precio del Plan Basic */
+}
+
+/* === Estilos para el Plan Expert === */
+.plan-expert {
+    background-color: #1f2328; /* Fondo para el Plan Expert */
+    border: 2px solid #666; /* Borde gris */
+}
+
+.plan-expert .price {
+    color: #f1c40f; /* Color para el precio del Plan Expert */
+}
+
+.plan-expert .save {
+    color: #8c9970; /* Color para el mensaje de ahorro */
+    font-weight: bold; /* Texto en negrita */
+}
+
+/* === Estilos para el Plan Expert Duo === */
+.plan-expert-duo {
+    background-color: #1f2328; /* Fondo para el Plan Expert Duo */
+    border: 2px solid #666; /* Borde gris */
+}
+
+.plan-expert-duo .price {
+    color: #f1c40f; /* Color para el precio del Plan Expert Duo */
+}
+
+.plan-expert-duo .save {
+    color: #8c9970; /* Color para el mensaje de ahorro */
+    font-weight: bold; /* Texto en negrita */
+}
+
+/* === Estilos comunes para todas las tarjetas de planes === */
+.plan-card {
+    border-radius: 10px; /* Esquinas redondeadas */
+    padding: 20px; /* Espaciado interno */
+    width: 280px; /* Ancho fijo para las tarjetas */
+    text-align: center; /* Centrar el contenido del texto */
+    transition: transform 0.3s ease; /* Efecto de transición al hacer hover */
+}
+
+/* === Efecto hover para las tarjetas === */
+.plan-card:hover {
+    transform: translateY(-10px); /* Elevar la tarjeta al pasar el ratón */
+}
+
+h3 {
+    font-size: 1.5rem; /* Tamaño de fuente para los títulos */
+    margin-bottom: 10px; /* Espaciado inferior */
+}
+
+/* === Estilos para los precios === */
+.price {
+    font-size: 2rem; /* Tamaño grande para el precio */
+    margin: 10px 0; /* Espaciado superior e inferior */
+}
+
+.price span {
+    font-size: 1rem; /* Tamaño reducido para "/mes" */
+    color: #e2e5eb; /* Color gris para el texto adicional */
+}
+
+/* === Información de facturación === */
+.billing {
+    margin: 10px 0 20px; /* Espaciado superior e inferior */
+    color: #8e9199; /* Color gris */
+}
+
+/* === Listas para los beneficios de cada plan === */
+ul {
+    list-style: none; /* Sin viñetas para la lista */
+    margin-bottom: 20px; /* Espaciado inferior */
+}
+
+ul li {
+    margin: 8px 0; /* Espaciado entre los elementos de la lista */
+}
+
+/* === Estilos para los botones === */
+.btn {
+    background-color: #4fbd6a; /* Fondo verde para los botones */
+    border: none; /* Sin borde */
+    color: #ffffff; /* Texto blanco */
+    padding: 12px; /* Espaciado interno */
+    width: 100%; /* Botón de ancho completo */
+    border-radius: 5px; /* Esquinas redondeadas */
+    cursor: pointer; /* Cambiar el cursor al pasar por encima */
+    transition: background-color 0.3s ease; /* Transición suave para el cambio de color */
+    font-size: 0.9em; /*agranda la letra*/
+    font-weight: bold; /*pone en negrita*/ 
+}
+
+/* === Efecto hover para los botones === */
+.btn:hover {
+    background-color: #3b6639; /* Cambiar el color al pasar el ratón */
+}
+
+/* === Estilo para el texto de ahorro === */
+.save {
+    margin-top: 10px; /* Espaciado superior */
+}
+
+
+/*ESTILO PARA LA SECCIÓN DE PROFESOR*/
+#quien-ensena {
+    background-color: #161b22;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 40px;
+    color: #ffffff;
+}
+
+.instructor-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.instructor-video img {
+    width: 300px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.instructor-info {
+    max-width: 500px;
+}
+
+.instructor-info h2 {
+    color: #58a6ff;
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+.instructor-info h3 {
+    font-size: 1.5em;
+    color: #ffffff;
+    margin-bottom: 5px;
+}
+
+.instructor-title {
+    color: #8b949e;
+    font-size: 1em;
+    margin-bottom: 15px;
+}
+
+.instructor-details {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+    color: #c9d1d9;
+    font-size: 1em;
+}
+
+.instructor-details li {
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+}
+
+.curso-btn {
+    padding: 10px 20px;
+    background-color: #2ea043;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 1em;
+}
+
+.curso-btn:hover {
+    background-color: #238636;
+}
+

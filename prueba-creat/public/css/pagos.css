@@ -1,0 +1,184 @@
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(
+        from 90deg at 50% 50%, 
+        #B0E0E6, #A1D6EA, #87CEFA, #5BA3D6, #3A79A1, #87CEFA, #B0E0E6
+    );
+    z-index: -1;
+    animation: diagonal-move 15s ease-in-out infinite;
+    opacity: 0.8; /* Aumenta un poco la opacidad */
+}
+
+@keyframes diagonal-move {
+    from {
+        transform: translate(0, 0);
+    }
+    to {
+        transform: translate(-50%, -50%);
+    }
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #e7f4fa; /* Fondo base celeste claro */
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.summary, .payment {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.summary {
+    flex: 2;
+}
+
+.payment {
+    flex: 1;
+}
+
+.summary h2, .payment h2 {
+    margin-bottom: 20px;
+    font-size: 18px;
+    color: #333;
+    text-align: center;
+}
+
+.course {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #fafafa;
+}
+
+.course img {
+    width: 120px;
+    height: 120px;
+    border-radius: 10px;
+    margin-right: 15px;
+    object-fit: cover;
+}
+
+.course-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    max-width: 65%;
+}
+
+.course-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.course small {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.5;
+}
+
+.remove {
+    color: #ff3b3b;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.remove:hover {
+    text-decoration: underline;
+}
+
+.course p {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+    text-align: right;
+}
+
+.total {
+    text-align: right;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+/* Estilo para las imágenes de las tarjetas */
+.card-images {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.card-logo {
+    width: 50px;
+    height: auto;
+}
+
+.payment-method {
+    margin-top: 20px;
+}
+
+.payment-method form {
+    display: flex;
+    flex-direction: column;
+}
+
+.payment-method input {
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.payment-method button {
+    background-color: #ffc107;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.payment-method button:hover {
+    background-color: #e0a800;
+}
+
+.other-methods {
+    margin-top: 20px;
+}
+
+.other-methods button {
+    background: none;
+    border: none;
+    color: #007bff;
+    cursor: pointer;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.other-methods button:hover {
+    text-decoration: underline;
+}

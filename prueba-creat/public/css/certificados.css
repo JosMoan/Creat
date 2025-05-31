@@ -1,0 +1,104 @@
+body {
+    background: linear-gradient(to bottom, #00bcd4, #ffffff); /* Degradado de celeste a blanco */
+    height: 100vh; /* Asegura que el fondo cubra toda la altura de la ventana */
+    margin: 0; /* Elimina los márgenes por defecto */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif; /* Establece una fuente simple */
+}
+
+
+/* Contenedor del certificado */
+.certificado {
+    width: 900px;
+    height: auto;
+    background: #fff;
+    border: 15px solid #e4e4e4;
+    border-radius: 10px;
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+/* Logo */
+.logo {
+    margin-bottom: 20px;
+}
+
+.logo-img {
+    width: 120px;
+}
+
+/* Texto principal */
+.titulo {
+    font-size: 22px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.nombre {
+    font-size: 30px;
+    color: #222;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+.subtitulo {
+    font-size: 18px;
+    color: #555;
+    margin: 10px 0;
+}
+
+.curso {
+    font-size: 28px;
+    color: #4caf50;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+/* Detalles */
+.detalles {
+    font-size: 16px;
+    color: #333;
+    margin: 30px 0;
+}
+
+/* Información adicional */
+.info-adicional {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #555;
+}
+
+.info-adicional a {
+    color: #4caf50;
+    text-decoration: none;
+}
+
+.info-adicional a:hover {
+    text-decoration: underline;
+}
+
+.info-adicional p {
+    margin: 5px 0;
+}
+
+/* Firmas */
+.firmas {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.firma {
+    text-align: center;
+}
+
+.firma p {
+    font-size: 14px;
+    color: #333;
+    margin: 5px 0;
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/registro.css">
+    <title>Registro</title>
+</head>
+<body>
+    <div class="container">
+        <!-- Panel izquierdo con texto descriptivo -->
+        <div class="left-panel">
+            <header>
+                <h2 class="logo">
+                    <img src="img/CreaTec1.png" alt="Logo" title="Logo-Rubus" class="logo-img">
+                    CreaTec: Diseñando el Aprendizaje del Mañana
+                </h2>
+            </header>
+            <h1>Registrarse</h1>
+            <!-- Párrafos con íconos de verificación y texto explicativo -->
+            <p><i class="fa fa-check-circle"></i>Te brindaremos una buena educación tecnológica.</p>
+            <p><i class="fa fa-check-circle"></i>No te pierdas de nuestros cursos.</p>
+            <p><i class="fa fa-check-circle"></i>Empieza con nosotros para tu educación.</p>
+
+            <!-- Imagen del educación tec debajo del texto -->
+        <img src="https://pinion.education/wp-content/uploads/2020/06/042_Educaciontecnologica_01.jpg" alt="animated-tec" class="animated-tec">
+        </div>
+
+        <!-- Panel derecho con formulario de registro -->
+        <div class="right-panel">
+            <h2>Crea tu cuenta CreaTec</h2>
+
+            <!-- Botones para registro con Google -->
+            <div class="social-buttons">
+                <a href="https://accounts.google.com/signin" target="_blank" style="text-decoration: none;">
+                    <button class="google">Regístrate con Google</button>
+                </button>
+                </a>
+            </div>
+
+            <!-- Formulario con campos de correo y contraseña -->
+            <form action="/validar" method="POST">
+                <input type="nombres" name="nombres" placeholder="Nombre completo" required>
+                <input type="usuario" name="usuario" placeholder="Usuario" required>
+                <input type="email" name="email" placeholder="Correo electrónico" required>
+                <label for="birthdate">Fecha de Nacimiento:</label>
+                <input type="date" id="edad" name="birthdate" min="1930-01-01" max="2024-12-31" placeholder="Fecha de Nacimiento" required>
+                <input type="password" name="password" placeholder="Contraseña" required>
+                <button class="register-button" type="submit">Crear una cuenta</button>
+            </form>
+
+            <!-- Enlace a iniciar sesión si ya tiene una cuenta -->
+            <a href="/login" class="buttom">¿Ya tienes una cuenta? Iniciar sesión</a>
+            <!-- Texto pequeño con términos y condiciones -->
+            <small>Al crear una cuenta de Createc, usted acepta nuestros <a href="#">Términos y condiciones</a>.</small>
+            <input type="checkbox" id="terms" name="terms" required>
+        </div>
+    </div>
+    <script src="js/app.js"></script>
+</body>
+</html>
+

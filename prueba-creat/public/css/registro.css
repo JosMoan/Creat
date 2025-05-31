@@ -1,0 +1,172 @@
+
+/*----------------------------------------------------------------------------------------------------------------------------------------------*/
+
+/* REGISTRO */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(
+        from 90deg at 50% 50%, 
+        #B0E0E6, #A1D6EA, #87CEFA, #5BA3D6, #3A79A1, #87CEFA, #B0E0E6
+    );
+    z-index: -1;
+    animation: diagonal-move 15s ease-in-out infinite;
+    opacity: 0.8; /* Aumenta un poco la opacidad */
+}
+
+@keyframes diagonal-move {
+    from {
+        transform: translate(0, 0);
+    }
+    to {
+        transform: translate(-50%, -50%);
+    }
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #e7f4fa; /* Fondo base celeste claro */
+}
+
+/* Estilo del logotipo */
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 1rem; /*Tamño fuente*/
+    color: #1f1717;
+    user-select: none;
+    cursor: pointer;/*Cambiar el cursor*/
+    text-shadow: 0 0 10px rgba(53, 37, 132, 0.255);
+}
+    /* Imagen del logo */
+    .logo-img {
+    width: 100px; /*ancho*/
+    height: auto;
+    margin-right: 10px;
+}
+    /* Establece la caja de modelos para que el padding y el border se incluyan en el ancho/alto de los elementos */
+    * {
+        box-sizing: border-box;
+    }
+    /* Estilos globales del body: margen y padding cero, fuente, fondo degradado y alineación del contenido */
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background: linear-gradient(to right, #f4f4f9,  #e0e0e0); /* Degradado en el fondo */
+        display: flex;
+        justify-content: center; /* Centra horizontalmente */
+        align-items: center; /* Centra verticalmente */
+        height: 100vh; /* La página ocupará toda la altura de la ventana */
+    }
+    /* Estilos del contenedor principal */
+    .container {
+        display: flex; /* Para tener dos paneles alineados uno al lado del otro */
+        justify-content: space-between; /* Espacio entre los paneles izquierdo y derecho */
+        background-color: rgb(223, 219, 220); /* Fondo blanco para el formulario */
+        padding: 30px; /* Espaciado interior */
+        border-radius: 8px; /* Bordes redondeados */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra alrededor del contenedor */
+        width: 800px; /* Ancho fijo del contenedor */
+    }
+    /* Estilos del panel izquierdo (descripción de la funcionalidad) */
+    .left-panel {
+        width: 50%; /* Ocupa el 50% del ancho del contenedor */
+    }
+    /* Título del panel izquierdo */
+    .left-panel h1 {
+        font-size: 30px; /* Tamaño del texto del título */
+        margin-bottom: 20px;
+        color: #1c1717; /* Color del texto */
+    }
+    /* Párrafos del panel izquierdo */
+    .left-panel p {
+        margin-bottom: 10px; /* Espacio entre párrafos */
+        font-size: 16px;
+    }
+    /* Íconos dentro de los párrafos del panel izquierdo */
+    .left-panel p i {
+        color: #3b82f6; /* Color azul del icono de verificación */
+        margin-right: 10px; /* Espacio entre el ícono y el texto */
+    }
+    /* Estilos del panel derecho (formulario de registro) */
+    .right-panel {
+        width: 40%; /* Ocupa el 40% del ancho del contenedor */
+        text-align: center; /* Centra el contenido dentro del panel */
+    }
+    /* Título del formulario */
+    .right-panel h2 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+    /* Estilos de los campos de nombre, usuario, correo, cumpleaños y contraseña */
+    input[type="nombres"],[type="usuario"], [type="email"], [type="birthdate"], input[type="password"] {
+        width: 100%; /* Ocupa todo el ancho del panel */
+        padding: 10px; /* Espaciado interior de los campos */
+        margin: 10px 0; /* Margen superior e inferior */
+        border: 1px solid #807791; /* Borde gris claro */
+        border-radius: 5px; /* Bordes redondeados */
+        font-size: 16px; /* Tamaño del texto dentro de los campos */
+    }
+    /* Botones para registro social (Google) */
+    .social-buttons button {
+        width: 100%; /* Los botones ocupan todo el ancho disponible */
+        padding: 10px; /* Espaciado interior */
+        margin: 10px 0; /* Espacio entre los botones */
+        border: none; /* Elimina los bordes por defecto */
+        border-radius: 5px; /* Bordes redondeados */
+        font-size: 16px;
+        cursor: pointer; /* Cambia el cursor a "puntero" al pasar por el botón */
+    }
+    /* Botón de registro con Google */
+    .social-buttons button.google {
+        background-color: #2970e3; /* Color azul de Google */
+        color: white; /* Texto en blanco */
+    }
+    /* Botón de "Crear una cuenta" */
+    .register-button {
+        width: 100%; /* Ocupa todo el ancho del panel */
+        padding: 10px;
+        background-color: #0a65c7; /* Color azul del botón */
+        color: white;
+        border: none; /* Sin bordes por defecto */
+        border-radius: 5px; /* Bordes redondeados */
+        cursor: pointer;
+    }
+    /* Efecto hover para el botón de "Crear una cuenta" */
+    .register-button:hover {
+        background-color: #227fe3; /* Color más oscuro al pasar el cursor por encima */
+    }
+    /* Estilos para enlaces */
+    a {
+        color: #104986; /* Color azul de los enlaces */
+        text-decoration: none; /* Elimina el subrayado por defecto */
+        display: block; /* El enlace ocupa toda la línea */
+        margin-top: 10px; /* Margen superior */
+    }
+    /* Texto pequeño debajo del formulario */
+    small {
+        display: block; /* Ocupa toda la línea */
+        margin-top: 10px;
+        font-size: 13px; /* Tamaño de texto pequeño */
+        color: #2a2626; /* Color gris para el texto */
+    }
+    /*Imagen de abajo*/
+    .animated-tec {
+        width: 290px; /* Ajusta el tamaño de la imagen si es necesario */
+        position: relative;
+        animation: moveLeftRight 4s infinite;
+    }
+
+    @keyframes moveLeftRight {
+        0% { left: 0; }
+        50% { left: 40px; }
+        100% { left: 0; }
+    }
+
+/*----------------------------------------------------------------------------------------------------------------------------------------------*/

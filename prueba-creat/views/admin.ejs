@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/panel.css">
+    <title>Panel de administrador</title>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="name-marca">
+            <h1>CreaTec</h1> <!--Titulo dentro de la barra lateral-->
+        </div>
+        <ul>
+            <!--Onclick es una función de JS que se ejecuta cuando el usuario hace click en un elemento-->
+            <!--&nbsp (espacio en blanco que agrega separación entre el icono y el texto)-->
+            <li onclick="showSection('dashboard')"><i class='bx bxs-dashboard'></i>&nbsp;<span>Panel</span></li> <!--Esto indica que la función realizará alguna acción para mostrar la indo de cada sección o cambiar el contenido dinámicamente en la página.-->
+            <li onclick="showSection('estudiantes')"><i class='bx bxs-user'></i>&nbsp;<span>Estudiantes</span></li>
+            <li onclick="showSection('escuelas')"><i class='bx bxs-school'></i>&nbsp;<span>Escuelas</span></li>
+            <li onclick="showSection('cursos')"><i class='bx bxs-book'></i>&nbsp;<span>Cursos</span></li>
+            <li onclick="showSection('ayuda')"><i class='bx bxs-help-circle'></i>&nbsp;<span>Ayuda</span></li>
+            <li onclick="showSection('configuracion')"><i class='bx bxs-cog'></i>&nbsp;<span>Configuración</span></li>
+            <li onclick="location.href='/logout'"><i class='bx bxs-log-out'></i>&nbsp;<span>Salir</span></li>
+        </ul>
+    </div>
+    <div class="container">
+        <div class="header">
+            <div class="nav">
+                <div class="search">
+                    <input type="text" placeholder="Buscar...">
+                    <button type="submit"><i class='bx bx-search'></i></button>
+                </div>
+                <div class="user">
+                    <a href="#" class="bt">Agregar Nuevo</a>
+                    <img src="img/noti.jpg" alt="">
+                    <div class="icon-case">
+                        <i class='bx bxs-user'></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Panel Principal -->
+        
+        <!--El "id" permite indentificar a los elementos y manipularlos o llamarlos en el JS-->
+        <div class="content" id="dashboard">
+            <div class="cards"> <!--Contenedor para agrupar las tarjetas-->
+                <!-- Tarjeta de Estudiantes -->
+                <div class="card"> 
+                    <div class="box">
+                        <!--Embedded JavaScript (EJS) es un motor de plantillas para Node.js que permite generar HTML dinámico directamente desde el servidor-->
+                        <h1><%= totalEstudiantes %></h1> <!--Inserta el valor de la variable "totalEstudiantes desde el servidor al html"-->
+                        <h3>Estudiantes</h3>
+                    </div>
+                    <div class="icon-case">
+                        <i class='bx bxs-user'></i>
+                    </div>
+                </div>
+                <!-- Tarjeta de Cursos -->
+                <div class="card">
+                    <div class="box">
+                        <h1><%= totalCursos %></h1>
+                        <h3>Cursos</h3>
+                    </div>
+                    <div class="icon-case">
+                        <i class='bx bxs-book'></i>
+                    </div>
+                </div>
+                <!-- Tarjeta de Escuelas -->
+                <div class="card">
+                    <div class="box">
+                        <h1>40</h1>
+                        <h3>Escuelas</h3>
+                    </div>
+                    <div class="icon-case">
+                        <i class='bx bxs-school'></i>
+                    </div>
+                </div>
+                <!-- Tarjeta de Profesores -->
+                <div class="card">
+                    <div class="box">
+                        <h1>30</h1>
+                        <h3>Profesores</h3>
+                    </div>
+                    <div class="icon-case">
+                        <i class='bx bxs-chalkboard'></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tabla con usuario y email -->
+            <div class="content-2">
+                <div class="new-student">
+                    <div class="title">
+                        <h2>Estudiantes Registrados</h2>
+                        <a href="#" class="bt" onclick="showSection('estudiantes')">Ver todo</a> <!--Un enlace que te lleva a la sección de estudiantes al hacer click en ella-->
+                    </div>
+                    <table class="table"> <!--Muestra una tabla con datos de los estudiantes-->
+                        <thead> <!--Encabezado-->
+                            <tr>
+                                <th>Usuario</th>
+                                <th>Email</th>
+                            </tr>
+                        </thead>
+                        <tbody> <!--Cuerpo de la tabla-->
+                            <% estudiantes.forEach(function(estudiante) { %> <!--ejecuta un bucle en el servidor para generar dinámicamente filas de una tabla con datos de cada estudiante.-->
+                                <tr>
+                                    <td><%= estudiante.usuario %></td>
+                                    <td><%= estudiante.email %></td>
+                                </tr> 
+                            <% }) %>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="pago-reciente">
+                    <div class="title">
+                        <h2>Pagos Recientes</h2>
+                        <a href="#" class="bt">Ver todo</a>
+                    </div>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Nombre del Estudiante</th>
+                                <th>Fecha del Pago</th>
+                                <th>Monto</th>
+                                <th>Estado</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Juan Pérez</td>
+                                <td>2023/11/01</td>
+                                <td>$500</td>
+                                <td>Completado</td>
+                            </tr>
+                            <tr>
+                                <td>María García</td>
+                                <td>2023/11/05</td>
+                                <td>$750</td>
+                                <td>Pendiente</td>
+                            </tr>
+                            <tr>
+                                <td>Carlos Rodríguez</td>
+                                <td>2023/11/07</td>
+                                <td>$600</td>
+                                <td>Completado</td>
+                            </tr>
+                            <tr>
+                                <td>Laura Fernández</td>
+                                <td>2023/11/10</td>
+                                <td>$800</td>
+                                <td>Pendiente</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sección de Estudiantes -->
+        <div class="content hidden" id="estudiantes">
+            <div class="title">
+                <h2>Información de Estudiantes</h2>
+            </div>
+            <table class="table table-estudiantes">
+                <thead>
+                    <tr>
+                        <th>Nombre Completo</th>
+                        <th>Usuario</th>
+                        <th>Email</th>
+                        <th>Fecha de Nacimiento</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% estudiantes.forEach(function(estudiante) { %>
+                        <% 
+                            let fechaObj = new Date(estudiante.fecha_nacimiento);
+                            let fechaFormateada = `${fechaObj.getFullYear()}/${String(fechaObj.getMonth() + 1).padStart(2, '0')}/${String(fechaObj.getDate()).padStart(2, '0')}`;
+                        %>
+                        <tr>
+                            <td><%= estudiante.nombre_completo %></td>
+                            <td><%= estudiante.usuario %></td>
+                            <td><%= estudiante.email %></td>
+                            <td><%= fechaFormateada %></td>
+                            <td>
+                                <button type="button" onclick="abrirModal('<%= estudiante.id %>', '<%= estudiante.nombre_completo %>', '<%= estudiante.usuario %>', '<%= estudiante.email %>', '<%= estudiante.fecha_nacimiento %>')">Editar</button>
+                                <a href="/admin/eliminar/<%= estudiante.id %>" class="btn-delete">Eliminar</a>
+                            </td>
+                        </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Sección de Escuelas -->
+<div class="content hidden" id="escuelas">
+    <div class="title">
+        <h2>Información de Escuelas</h2>
+    </div>
+    <table class="table table-escuelas">
+        <thead>
+            <tr>
+                <th>Nombre de la Escuela</th>
+                <th>Ubicación</th>
+                <th>Director</th>
+                <th>Teléfono</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Escuela Tecnológica Central</td>
+                <td>Ciudad de México</td>
+                <td>Dr. José Pérez</td>
+                <td>+52 55 1234 5678</td>
+                <td>
+                    <button type="button" onclick="alert('Editar información de la escuela')">Editar</button>
+                    <button type="button" onclick="alert('Eliminar esta escuela')">Eliminar</button>
+                </td>
+            </tr>
+            <tr>
+                <td>Academia de Programación Avanzada</td>
+                <td>Bogotá</td>
+                <td>Ing. Ana Ramírez</td>
+                <td>+57 1 234 5678</td>
+                <td>
+                    <button type="button" onclick="alert('Editar información de la escuela')">Editar</button>
+                    <button type="button" onclick="alert('Eliminar esta escuela')">Eliminar</button>
+                </td>
+            </tr>
+            <tr>
+                <td>Centro de Innovación Digital</td>
+                <td>Lima</td>
+                <td>Lic. María López</td>
+                <td>+51 1 987 6543</td>
+                <td>
+                    <button type="button" onclick="alert('Editar información de la escuela')">Editar</button>
+                    <button type="button" onclick="alert('Eliminar esta escuela')">Eliminar</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+        <!-- Sección de cursos -->
+        <div class="content hidden" id="cursos">
+            <div class="title">
+                <h2>Información de cursos</h2>
+                <button class="bt agregar-curso-btn" onclick="abrirModalAgregarCurso()">Agregar Curso</button>
+            </div>
+            <table class="table table-cursos">
+                <thead>
+                    <tr>
+                        <th>Nombre del curso</th>
+                        <th>descripción</th>
+                        <th>fecha de inicio</th>
+                        <th>fecha de cierre</th>
+                        <th>Profesor</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% cursos.forEach(function(curso) { %>
+                        <tr>
+                            <td><%= curso.nombre %></td>
+                            <td><%= curso.descripcion %></td>
+                            <td><%= curso.fecha_inicio %></td>
+                            <td><%= curso.fecha_cierre %></td>
+                            <td><%= curso.profesor %></td>
+                            <td>
+                                <button type="button" onclick="abrirModalCurso('<%= curso.id %>', '<%= curso.nombre %>', '<%= curso.descripcion %>', '<%= curso.fecha_inicio %>', '<%= curso.fecha_cierre %>', '<%= curso.profesor %>')">Editar</button>
+                                <a href="/admin/eliminar-curso/<%= curso.id %>" class="btn-delete">Eliminar</a>
+                            </td>
+                        </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+        </div>
+</div>
+
+    <!-- Ventana Modal para Editar Estudiante -->
+    <div id="modal-editar" class="modal hidden">
+        <div class="modal-content">
+            <span class="close" onclick="cerrarModal()">&times;</span>
+            <h2>Editar Información del Estudiante</h2>
+            <form id="form-editar" action="/admin/editar" method="POST">
+                <input type="hidden" name="id" id="edit-id">
+                <label>Nombre Completo:</label>
+                <input type="text" name="nombre_completo" id="edit-nombre_completo">
+                <label>Usuario:</label>
+                <input type="text" name="usuario" id="edit-usuario">
+                <label>Email:</label>
+                <input type="email" name="email" id="edit-email">
+                <label>Fecha de Nacimiento:</label>
+                <input type="date" name="fecha_nacimiento" id="edit-fecha_nacimiento" required>
+                <button type="submit">Guardar Cambios</button>
+            </form>
+        </div>
+    </div>
+
+<!-- Modal para Editar Cursos -->
+<div id="modal-editar-curso" class="modal hidden">
+    <div class="modal-content">
+        <span class="close" onclick="cerrarModalCurso()">&times;</span>
+        <h2>Editar Curso</h2>
+        <form id="form-editar-curso" onsubmit="guardarCambios(event)">
+            <input type="hidden" name="id" id="curso-id">
+            <label>Nombre del Curso:</label>
+            <input type="text" name="nombre" id="curso-nombre" required>
+            <label for="curso-descripcion">Descripción:</label>
+            <textarea name="descripcion" id="curso-descripcion" rows="4" placeholder="Ingrese una descripción detallada del curso" required></textarea>
+            <label>Fecha de Inicio:</label>
+            <input type="date" name="fecha_inicio" id="curso-fecha-inicio" required>
+            <label>Fecha de Cierre:</label>
+            <input type="date" name="fecha_cierre" id="curso-fecha-cierre" required>
+            <label>Profesor:</label>
+            <input type="text" name="profesor" id="curso-profesor" required>
+            <button type="submit">Guardar Cambios</button>
+        </form>
+    </div>
+</div>
+<!-- Modal para Agregar Cursos -->
+<div id="modal-agregar-curso" class="modal hidden">
+    <div class="modal-content">
+        <span class="close" onclick="cerrarModalAgregarCurso()">&times;</span>
+        <h2>Agregar Nuevo Curso</h2>
+        <form id="form-agregar-curso" action="/admin/agregar-curso" method="POST">
+            <label>Nombre del Curso:</label>
+            <input type="text" name="nombre" required>
+            <label>Descripción:</label>
+            <textarea name="descripcion" placeholder="Ingrese una descripción detallada del curso" required></textarea>
+            <label>Fecha de Inicio:</label>
+            <input type="date" name="fecha_inicio" required>
+            <label>Fecha de Cierre:</label>
+            <input type="date" name="fecha_cierre" required>
+            <label>Profesor:</label>
+            <input type="text" name="profesor" required>
+            <button type="submit">Agregar Curso</button>
+        </form>
+    </div>
+</div>
+
+    <script src="js/panel.js"></script>
+</body>
+</html>

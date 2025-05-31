@@ -1,0 +1,657 @@
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+h1, h2 {
+    color: #444;
+}
+
+h3 {
+    color: #999;
+}
+
+/* Botón */
+.bt {
+    background: #f05462;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+}
+
+.bt:hover {
+    color: #f05462;
+    background: white;
+    padding: 3px 8px;
+    border: 2px solid #f05462;
+}
+
+/* Títulos */
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 15px 10px;
+    border-bottom: 2px solid #999;
+}
+
+/* Tabla general */
+.table {
+    padding: 10px;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+/* Estilos para iconos */
+.icon-case i {
+    font-size: 60px;
+    color: #f05462;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Sidebar */
+.sidebar {
+    position: fixed;
+    background: #f05462;
+    width: 20vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar .name-marca {
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidebar li {
+    font-size: 24px;
+    padding: 10px 40px;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar li:hover {
+    background: white;
+    color: #f05462;
+    cursor: pointer;
+}
+
+/* Contenedor principal */
+.container {
+    position: absolute;
+    right: 0;
+    width: 80vw;
+    height: 100vh;
+    background: #f1f1f1;
+}
+
+/* Header */
+.container .header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 80vw;
+    height: 10vh;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.container .header .nav {
+    width: 90%;
+    display: flex;
+    align-items: center;
+}
+
+.container .header .nav .search {
+    flex: 3;
+    display: flex;
+    justify-content: center;
+}
+
+.container .header .nav .search input[type=text] {
+    border: none;
+    background: #f1f1f1;
+    padding: 10px;
+    width: 50%;
+}
+
+.container .header .nav .search button {
+    width: 40px;
+    height: 40px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container .header .nav .user {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container .header .nav .user img {
+    width: 40px;
+    height: 40px;
+}
+
+.container .header .nav .user .img-case {
+    position: relative;
+    width: 50px;
+    height: 50px;
+}
+
+.container .header .nav .user .img-case img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+/* Contenido */
+.container .content {
+    position: relative;
+    margin-top: 12vh;
+    min-height: 98vh;
+    background: #f1f1f1;
+}
+
+.container .content .cards {
+    padding: 20px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.container .content .cards .card {
+    width: 250px;
+    height: 150px;
+    background: white;
+    margin: 20px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
+}
+
+.container .content .cards .card .box {
+    text-align: center;
+    flex: 1;
+}
+
+.container .content .cards .card .box h1 {
+    font-size: 2.5em;
+    color: #333;
+}
+
+.container .content .cards .card .box h3 {
+    font-size: 1.2em;
+    color: #777;
+}
+
+/* Tablas en el contenido */
+.container .content .content-2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px;
+}
+
+.container .content .content-2 .new-student,
+.container .content .content-2 .pago-reciente {
+    flex: 1;
+    background: white;
+    min-height: 50vh;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+/* Tabla de estudiantes */
+.table-estudiantes {
+    width: 98%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.table-estudiantes thead {
+    background-color: #f05462;
+    color: white;
+    text-transform: uppercase;
+}
+
+.table-estudiantes th, .table-estudiantes td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #e1e1e1;
+}
+
+.table-estudiantes td {
+    color: #555;
+}
+
+.table-estudiantes tbody tr:hover {
+    background-color: #f9f9f9;
+    cursor: pointer;
+}
+
+.table-estudiantes .btn-delete {
+    color: #f05462;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.table-estudiantes .btn-delete:hover {
+    background-color: #f05462;
+    color: white;
+}
+/* Botón de editar */
+.table-estudiantes button[type="button"] {
+    background-color: #f05462; /* Color verde para diferenciar de eliminar */
+    color: white;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.table-estudiantes button[type="button"]:hover {
+    background-color: #f4828b; /* Un tono más oscuro de verde */
+    transform: scale(1.05); /* Efecto de escala al pasar el mouse */
+}
+/*Tabla de escuelas*/ 
+.table-escuelas {
+    width: 98%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.table-escuelas thead {
+    background-color: #f05462;
+    color: white;
+    text-transform: uppercase;
+}
+
+.table-escuelas th, .table-escuelas td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #e1e1e1;
+}
+
+.table-escuelas td {
+    color: #555;
+}
+
+.table-escuelas tbody tr:hover {
+    background-color: #f9f9f9;
+    cursor: pointer;
+}
+
+.table-escuelas .btn-delete {
+    color: #f05462;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.table-escuelas .btn-delete:hover {
+    background-color: #f05462;
+    color: white;
+}
+
+/* Botón de editar */
+.table-escuelas button[type="button"] {
+    background-color: #f05462;
+    color: white;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.table-escuelas button[type="button"]:hover {
+    background-color: #f4828b;
+    transform: scale(1.05);
+}
+/*Tabla de cursos*/
+.table-cursos {
+    width: 98%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.table-cursos thead {
+    background-color: #f05462;
+    color: white;
+    text-transform: uppercase;
+}
+
+.table-cursos th, .table-cursos td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #e1e1e1;
+}
+
+.table-cursos td {
+    color: #555;
+}
+
+.table-cursos tbody tr:hover {
+    background-color: #f9f9f9;
+    cursor: pointer;
+}
+
+.table-cursos .btn-delete {
+    color: #f05462;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.table-cursos .btn-delete:hover {
+    background-color: #f05462;
+    color: white;
+}
+
+/* Botón de editar */
+.table-cursos button[type="button"] {
+    background-color: #f05462;
+    color: white;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.table-cursos button[type="button"]:hover {
+    background-color: #f4828b;
+    transform: scale(1.05);
+}
+
+.table-cursos td:nth-child(2) { /* Limita la columna de descripción */
+    max-width: 200px; /* Ajusta el ancho máximo */
+    white-space: nowrap; /* Evita que el texto haga salto de línea */
+    overflow: hidden; /* Oculta el texto desbordado */
+    text-overflow: ellipsis; /* Agrega puntos suspensivos para el texto largo */
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 250px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%; /* Ajusta según la posición deseada */
+    left: 50%;
+    margin-left: -125px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Modal */
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    display: block;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.hidden {
+    display: none;
+}
+
+.modal-content {
+    position: relative;
+    padding: 20px;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+/*Mejorando el texarea de descripción de cursos*/
+textarea {
+    width: 100%; /* Abarca todo el ancho disponible */
+    padding: 10px; /* Espaciado interno */
+    margin-top: 5px; /* Espacio entre el label y el textarea */
+    font-size: 16px; /* Tamaño de fuente */
+    border: 1px solid #ccc; /* Borde ligero */
+    border-radius: 5px; /* Bordes redondeados */
+    resize: vertical; /* Permitir ajustar solo en altura */
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); /* Sombra interna para efecto de profundidad */
+    transition: border-color 0.3s ease; /* Animación al enfocar */
+}
+
+textarea:focus {
+    border-color: #007bff; /* Color del borde al enfocar */
+    outline: none; /* Elimina el contorno por defecto */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Efecto de sombra azul */
+}
+
+
+@keyframes modalFadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.modal-content .close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 18px;
+    color: #666;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.modal-content .close:hover {
+    color: #333;
+}
+
+.modal-content h2 {
+    font-size: 22px;
+    color: #333;
+    border-bottom: 2px solid #f2f2f2;
+    padding-bottom: 10px;
+}
+
+.modal-content label {
+    display: block;
+    margin-top: 15px;
+    color: #666;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.modal-content input[type="text"],
+.modal-content input[type="email"],
+.modal-content input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #333;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.modal-content input[type="text"]:focus,
+.modal-content input[type="email"]:focus,
+.modal-content input[type="date"]:focus {
+    border-color: #007bff;
+}
+
+.modal-content button[type="submit"] {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.modal-content button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Ajuste del sidebar para pantallas pequeñas */
+@media screen and (max-width: 768px) {
+    .sidebar {
+        width: 60px;
+    }
+    .sidebar li {
+        justify-content: center;
+    }
+    .sidebar li span {
+        display: none;
+    }
+}
+
+/* Ajuste del contenedor principal */
+@media screen and (max-width: 768px) {
+    .container {
+        width: calc(100% - 60px);
+        margin-left: 60px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .container .content .cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .container .content .content-2 {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .table-estudiantes th, 
+    .table-estudiantes td {
+        font-size: 14px;
+        padding: 8px;
+    }
+}
+
+/* Modal */
+@media screen and (max-width: 576px) {
+    .modal-content {
+        width: 90%;
+        padding: 20px;
+    }
+}
+
+/* Ocultar imágenes en pantallas pequeñas */
+@media screen and (max-width: 576px) {
+    .container .header .user img {
+        display: none;
+    }
+}
+
+/* Botón de búsqueda responsivo */
+@media screen and (max-width: 768px) {
+    .container .header .nav .search input[type="text"] {
+        width: 80%;
+    }
+}
+
+/* Optimización de tabla */
+@media screen and (max-width: 576px) {
+    .table th:nth-child(3),
+    .table td:nth-child(3) {
+        display: none;
+    }
+}
+
+/* Aumentar espaciado en botones */
+@media screen and (max-width: 576px) {
+    .bt {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+}
+

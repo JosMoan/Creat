@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pasarela de Pago</title>
+    <link rel="stylesheet" href="/css/pagos.css">
+</head>
+<body>
+    <div class="container">
+        <div class="summary">
+            <h2>RESUMEN DE COMPRA | Recuerda que los pagos son seguros</h2>
+            <div class="course">
+                <img src="/img/desarrollo-web.png" alt="Curso HTML5">
+                <div class="course-info">
+                    <p class="course-title">Curso de Desarrollo Web</p>
+                    <small>
+                        Desarrolla aplicaciones web desde cero y haz realidad tu carrera como Web Developer.</br>
+                        Sé parte de la industria con los empleos mejor pagados a nivel global.</br>
+                        <b>Plan Expert Duo</b> - Para 3 estudiantes
+                    </small>
+                </div>
+                <div>
+                    <a href="#" class="remove">Eliminar Curso</a>
+                    <p>S/100.00 PEN</p>
+                </div>
+            </div>
+            <div class="course">
+                <img src="/img/Python.jpg" alt="Curso de Programación con Pyhton">
+                <div class="course-info">
+                    <p class="course-title">Curso de Programación</p>
+                    <small>
+                        Programa desde cero, domina Javascript, entiende HTML y aprende de algoritmos.</br>
+                        Sí, desde cero. Entenderás la lógica del código y cómo programar un videojuego web de principio a fin.</br>
+                        <b>Plan Basic</b> - Para 1 estudiante
+                    </small>
+                </div>
+                <div>
+                    <a href="#" class="remove">Eliminar Curso</a>
+                    <p>S/200.00 PEN</p>
+                </div>
+            </div>
+            <p class="total">Total: S/300.00 PEN</p>
+        </div>
+        <div class="payment">
+            <h2>Opciones de Pago</h2>
+            <!-- Imágenes de las tarjetas -->
+            <div class="card-images">
+                <img src="/img/visa.png" alt="Visa" class="card-logo">
+                <img src="/img/mastercard.png" alt="MasterCard" class="card-logo">
+                <img src="/img/americanexpress.png" alt="American Express" class="card-logo">
+            </div>
+            <div class="payment-method">
+                <form action="/procesar-pago" method="POST">
+                    <input type="text" placeholder="Documento de identidad" required>
+                    <input type="text" placeholder="Titular de la tarjeta" required>
+                    <input type="text" placeholder="Número de tarjeta" required>
+                    <input type="text" placeholder="MM/AA" required>
+                    <input type="text" placeholder="CVV" required>
+                    <button>Pagar S/300 PEN</button>
+                </form>
+            </div>
+            <div class="other-methods">
+                <button>Efectivo con Pago Efectivo</button>
+                <button>Pago con Yape, Plin y Ligo</button>
+                <button>Pago con PayPal</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
